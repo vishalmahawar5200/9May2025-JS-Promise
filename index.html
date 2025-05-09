@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //1. Class Definition is one time process
+            
+            class MyClass{
+                //1. Property/Variable
+                x; //Define/Declaration
+                y; //Define/Declaration
+
+                //2. Constructor/Esp.Function/Method
+                constructor(fa1,fa2){ //fa is a Formal Argument
+                    //The role of constructor is to initialize the property
+                    this.x = fa1; //this is class internal object cio
+                    this.y = fa2; //this is class internal object cio
+                }
+                //3. Method/Function
+                myResult(){  //function name are always written in camelCase
+                    console.log(this.x+this.y);
+                }
+            }
+
+            //2. Class Instantiation/Create Class Object is many time process
+            //let ceo1 = new ClassName();
+            let ceo1 = new MyClass(20,40);
+            //object.member
+            //1. object.property
+            //2. object.method();  . = member selection operator
+            ceo1.myResult();
+
+        </script>
+        <script>
+            let co1 = new Promise(function(success,failed){
+                //fa1 = fa1 is callback function =cbfn
+                setTimeout(()=>{
+                    //console.log("Hello Good Morning");
+                    success("Hello Good Morning");
+                },5000);
+            }); 
+            
+            //wait
+            //Producing Code
+            //Promise Chain
+            //po.then().then().catch().finally();
+            //Consuming Code = wait for result
+            
+            ceo1.then(function(result){
+                console.log('result-->',result);
+            }).catch().finally();
+        </script>
+    </body>
+</html>
